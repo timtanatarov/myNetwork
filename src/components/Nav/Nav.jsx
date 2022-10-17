@@ -19,6 +19,19 @@ const Navbar = () => {
             <div>
                 <NavLink to='/music' className={navData => navData.isActive ? s.active : s.item}>Music</NavLink>
             </div>
+            <div>
+                <NavLink to='/friends' className={navData => navData.isActive ? s.active : s.item}>Friends</NavLink>
+            </div>
+            <div>
+                <img className={s.friendsAvatars} src='https://cdn-icons-png.flaticon.com/512/149/149071.png'/>
+                <img className={s.friendsAvatars} src='https://cdn-icons-png.flaticon.com/512/149/149071.png'/>
+                <img className={s.friendsAvatars} src='https://cdn-icons-png.flaticon.com/512/149/149071.png'/>
+            </div>
+            <div>
+                <a className={s.friendsNames}>Ричард</a>
+                <a className={s.friendsNames}>Стьюи</a>
+                <a className={s.friendsNames}>Алекс</a>
+            </div>
         </nav>
     );
 };

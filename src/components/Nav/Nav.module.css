@@ -1,10 +1,10 @@
-.nav{
+.nav {
     grid-area: n;
     background-color: darkslateblue;
     padding: 20px;
 }
 
-.item{
+.item {
     text-decoration: none;
     color: white;
 }
@@ -12,4 +12,16 @@
 .active {
     text-decoration: none;
     color: silver;
+}
+
+.friendsAvatars {
+    height: 50px;
+    border-radius: 10px;
+    padding: 15px 20px 0px 0px;
+}
+
+.friendsNames {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px 0px 0px;
 }

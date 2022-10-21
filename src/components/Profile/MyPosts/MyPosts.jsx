@@ -3,6 +3,9 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
     const postsElements = props.posts.map(p => <Post message={p.messages} likes={p.likesCount}/>);
+
+    let addPost = () => { alert('Hey, bruh, nice ass!')};
+
     return (
         <div className={s.postsBlock}>
             <h3>
@@ -13,7 +16,7 @@ const MyPosts = (props) => {
                     <textarea></textarea>
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={ addPost }>Add post</button>
                 </div>
                 <div>
                     <button>Remove</button>

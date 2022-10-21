@@ -1,10 +1,9 @@
 import reportWebVitals from './reportWebVitals';
-import {state} from "./components/redux/state";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {addPost, state, updateNewPostNext} from "./components/redux/state";
+import {addPost, state, subscribe, updateNewPostNext} from "./components/redux/state";
 import {BrowserRouter} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +17,8 @@ const rerenderEntireTree = () => {
 
 
 rerenderEntireTree(state);
+
+subscribe(rerenderEntireTree);
 
 
 

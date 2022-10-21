@@ -10,7 +10,7 @@ const MyPosts = (props) => {
     };
     const postsElements = props.posts.map(p => <Post message={p.message} likes={p.likesCount}/>);
 
-     let newPostElement = React.createRef();
+    let newPostElement = React.createRef();
 
     const addPosts = () => {
         props.addPost();
@@ -33,7 +33,7 @@ const MyPosts = (props) => {
                         value={props.newPostText}/>
                 </div>
                 <div>
-                    <button onClick={ addPost }>Add post</button>
+                    <button onClick={addPost}>Add post</button>
                 </div>
                 <div>
                     <button>Remove</button>

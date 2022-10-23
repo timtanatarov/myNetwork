@@ -11,17 +11,17 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Friends from "./components/Friends/Friends";
 
 const App = (props) => {
-    // console.log(props);
     return (
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
                 <Routes>
                     <Route path='/dialogItem/*' element={<Dialogs state={props.state.dialogsPage}/>}/>
-                    <Route path='/profile/*' element={<Profile
-                        state={props.state.profilePage}
-                        addPost={props.addPost}
-                        updateNewPostText={props.updateNewPostText}
+                    <Route path='/profile/*' element={
+                        <Profile
+                            state={props.state.profilePage}
+                            addPost={props.addPost}
+                            updateNewPostText={props.updateNewPostText}
                     />}
                     />
                     <Route path='/news' element={<News/>}/>

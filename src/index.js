@@ -3,23 +3,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {addPost, state, subscribe, updateNewPostNext} from "./components/redux/state";
 import {BrowserRouter} from "react-router-dom";
+import {store} from "./components/redux/state";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const rerenderEntireTree = (state) => {
     root.render(
         <BrowserRouter>
-            <App state={state} addPost={addPost} updateNewPostText={updateNewPostNext}/>
+            <App state={state}
+                 addPost={store.addPost.bind(store)}
+                 updateNewPostText={store.updateNewPostNext.bind(store)}
+            />
         </BrowserRouter>);
 
 };
 
 
-rerenderEntireTree(state);
+rerenderEntireTree(store.getState());
 
-subscribe(rerenderEntireTree);
-
+store.subscribe(rerenderEntireTree);
 
 
 // If you want to start measuring performance in your app, pass a function

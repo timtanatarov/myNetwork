@@ -1,6 +1,9 @@
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_POST = 'ADD-POST';
 
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
+const SEND_MESSAGE = 'SEND_MESSAGE';
+
 export let store = {
     _state: {
         profilePage: {
@@ -8,7 +11,7 @@ export let store = {
                 {id: 1, message: 'Hi! How are you?', likesCount: 16},
                 {id: 2, message: `It's my first post`, likesCount: 25},
                 {id: 3, message: 'Help me! Someone!', likesCount: 213},
-                {id: 4, message: 'AMOGUS', likesCount: 1339},
+                {id: 4, message: 'I am really enjoyed it!', likesCount: 1339},
             ],
             newPostText: 'ADD NEW POST...',
         },
@@ -28,6 +31,7 @@ export let store = {
                 {id: 4, name: 'Alexander'},
                 {id: 5, name: 'Svatoslav'},
             ],
+            newMessageBody: '',
         },
     },
     _callSubscriber() {
@@ -52,8 +56,11 @@ export let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callSubscriber(this._state);
-        } else if(action.type === UPDATE_NEW_POST_TEXT){
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.body;
             this._callSubscriber(this._state);
         }
     },

@@ -16,7 +16,7 @@ const App = (props) => {
                 <Header/>
                 <Navbar/>
                 <Routes>
-                    <Route path='/dialogItem/*' element={<Dialogs state={props.state.dialogsPage}/>}/>
+                    <Route path='/dialogItem/*' element={<Dialogs store={props.store}/>}/>
                     <Route path='/profile/*' element={
                         <Profile
                             profilePage={props.state.profilePage}

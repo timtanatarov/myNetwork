@@ -1,6 +1,6 @@
 import {profileReducer} from "./profileReducer";
 import {dialogsReducer} from "./dialogsReducer";
-import {sidebar} from "./sidebarReducer";
+import {sidebar, sidebarReducer} from "./sidebarReducer";
 
 export let store = {
     _state: {
@@ -32,6 +32,7 @@ export let store = {
             ],
             newMessageBody: '',
         },
+        sidebar: { },
     },
     _callSubscriber() {
         console.log('State was changed');
@@ -45,9 +46,9 @@ export let store = {
     },
 
     dispatch(action) {
-        this._state.profilePage = profileReducer(this._state.profilePage, action)
-        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
-
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
         this._callSubscriber(this._state);
     },

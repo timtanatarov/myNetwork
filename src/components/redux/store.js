@@ -1,6 +1,6 @@
 import {profileReducer} from "./profileReducer";
 import {dialogsReducer} from "./dialogsReducer";
-import {sidebar, sidebarReducer} from "./sidebarReducer";
+import {sidebarReducer} from "./sidebarReducer";
 
 export let store = {
     _state: {
@@ -30,7 +30,6 @@ export let store = {
                 {id: 4, name: 'Alexander'},
                 {id: 5, name: 'Svatoslav'},
             ],
-            newMessageBody: '',
         },
         sidebar: { },
     },

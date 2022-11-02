@@ -1,4 +1,4 @@
-import s from './Friends.module.css';
+import React from "react";
 const Friends = () => {
     return (
             <div>

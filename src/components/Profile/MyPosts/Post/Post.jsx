@@ -1,5 +1,6 @@
 import s from './Post.module.css';
 import {logDOM} from "@testing-library/react";
+import React from "react";
 
 const Post = (props) => {
     return (

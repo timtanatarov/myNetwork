@@ -1,14 +1,14 @@
 import React from "react";
 import s from "./Users.module.css";
+import defaultAvatar from "../../assets/images/defaultAvatar.jpg"
+import {NavLink} from "react-router-dom";
 
 export const Users = (props) => {
-
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-
     return (
         <div>
             <div>
@@ -22,11 +22,14 @@ export const Users = (props) => {
 
             </div>
             {props.users.map(u => <div key={u.id}>
-            <span>
+                {console.log(u.photos)}
+                <span>
                 <div className={s.avatarPhoto}>
+                    <NavLink to={'/profile/' +  u.id}>
                     <img
-                        src={u.photos.small !== null ? u.photos.small : 'https://pbs.twimg.com/media/FOXLCuDVQAAaEW4.jpg'}
+                        src={u.photos.small !== null ? u.photos.small : defaultAvatar}
                         alt='#'/>
+                        </NavLink>
                 </div>
                 <div>
                     {u.followed ? <button onClick={() => {
